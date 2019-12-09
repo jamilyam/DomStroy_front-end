@@ -1,0 +1,26 @@
+.product {
+  margin: 20px;
+  .name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+  }
+  .product-info {
+    border: 1px grey;
+    display: flex;
+    margin-top: 20px;
+    .info, .price {
+      flex: 1;
+    }
+    .info > div {
+      margin-top: 10px;
+    }
+  }
+  .show {
+    border: 1px grey;
+    .description {
+      max-width: 70%;
+      border: 1px grey;
+    }
+  }
+}

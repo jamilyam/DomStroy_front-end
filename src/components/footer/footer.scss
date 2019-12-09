@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: darkorange;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px;
+  a {
+    color: white;
+    text-decoration-line: none;
+  }
+  .social {
+    display: flex;
+  }
+}
+

@@ -1,0 +1,35 @@
+.home {
+  margin: auto;
+  text-align: center;
+  .h {
+    margin-bottom: 20px;
+    a {
+      text-decoration: none;
+      color: darkorange;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .products {
+    padding: 20px 50px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .first-block {
+    margin: 20px;
+    display: flex;
+    .categories {
+      flex-basis: 20%;
+      margin: 20px;
+    }
+  }
+  .products-on-sale {
+    justify-content: center;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}

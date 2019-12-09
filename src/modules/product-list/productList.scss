@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+.parent-container {
+  margin-bottom: 20px;
+  max-width: 80%;
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+}

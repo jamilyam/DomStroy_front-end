@@ -1,0 +1,32 @@
+.header {
+  padding: 0 10px;
+  display: flex;
+  background-color: darkorange;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  > * {
+    flex: 1 1 auto;
+
+  }
+  a {
+    color: white;
+    text-decoration-line: none;
+  }
+  input.search {
+    flex: 3 0 auto;
+    width: 500px;
+    height: 40px;
+    border-radius: 15px;
+  }
+  button {
+    width: 50px;
+    height: 30px;
+    border: none;
+    outline: none;
+  }
+  img.logo {
+    width: auto;
+    height: 50px;
+  }
+}

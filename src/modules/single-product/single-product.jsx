@@ -1,8 +1,9 @@
 import React from 'react';
-import './product.scss';
+import './single-product.scss';
 import { withRouter } from "react-router-dom";
 import Core from "../../components/core/core";
 import ButtonIcon from "../../components/button-icon/button-icon";
+import Context from "../../context";
 
 
 class SingleProduct extends React.Component {
@@ -31,6 +32,8 @@ class SingleProduct extends React.Component {
       const {id, image, name, brand, type, color, description, price, category, weight, isOnSale, liked} = this.state.product;
 
         return(
+          <Context.Consumer>
+            {(context) => (
           <Core>
             <div className='product'>
               <div className='name'>{name}</div>
@@ -47,10 +50,9 @@ class SingleProduct extends React.Component {
                 <div className='price'>{price}сом
                   <ButtonIcon
                     type = 'shopping-cart'
-                    onClick={() =>{}
-
-                    }
-                  ></ButtonIcon>
+                    onClick={() =>
+                      context.onAddToCart(true, id)}>
+                  </ButtonIcon>
                 </div>
               </div>
               <div className='show'>Описание
@@ -58,6 +60,8 @@ class SingleProduct extends React.Component {
               </div>
             </div>
           </Core>
+            )}
+          </Context.Consumer>
         )
     }
 }

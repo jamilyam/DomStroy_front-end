@@ -1,9 +1,9 @@
 import React from 'react';
 import './categories.scss';
-import ProductBox from "../../components/product-box/productBox";
+import ProductBox from "../../components/product-box/product-box";
 import {withRouter} from 'react-router-dom';
 import Category from "../../components/category/category";
-import CATEGORIES from "../../data/data";
+import {CATEGORIES} from "../../data/data";
 import Core from "../../components/core/core";
 
 

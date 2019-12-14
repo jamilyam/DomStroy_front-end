@@ -1,11 +1,11 @@
 import React from 'react';
 import './home.scss';
-import ProductBox from "../../components/product-box/productBox";
-import ProductOnSale from "../product-onsale-list/productonsale";
+import ProductBox from "../../components/product-box/product-box";
 import Category from "../../components/category/category";
-import CATEGORIES from "../../data/data";
+import { CATEGORIES } from "../../data/data";
 import Core from "../../components/core/core";
 import Banner from "../../components/banner/banner";
+import ProductOnSale from "../../components/product-on-sale/product-on-sale";
 
 class Home extends React.Component{
   constructor(props) {
@@ -34,7 +34,6 @@ class Home extends React.Component{
             });
           }}>
             <div className='home'>
-              {/*<b>Liked notebooks:{this.state.likedNotebooks.length}</b>*/}
               <div className='first-block'>
                 <div className='categories'>
                   {CATEGORIES.map((category)=> {
@@ -50,42 +49,46 @@ class Home extends React.Component{
                 </div>
                 <Banner/>
               </div>
-              <div className='h'> <a href={`/product-list`}>Популярные товары</a></div>
+              <div className='h'> <a href={`/product-list`}>Все товары</a></div>
               <div className='products'>
                 {this.state.products.map((product) => {
                   return (
                     <ProductBox
                       key={`product-${product.id}`}
                       product={product}
-                      likedProducts={this.state.likedProducts}
-                      onStatusChange={(isLiked, productId) => {
-                        this.onStatusChange(isLiked, productId);
-                      }
-                      }
+                      // likedProducts={this.state.likedProducts}
+                      // onStatusChange={(isLiked, productId) => {
+                      //   this.onStatusChange(isLiked, productId);
+                      // }
+                      // }
                     />
                   )
                 })}
               </div>
-              <div className='h'> <a href={`/product-on-sale`}>Товары со скидкой</a></div>
-              <div className='products-on-sale'><ProductOnSale/></div>
+              <div className='h'>
+                <a href={`/product-on-sale`}>Товары со скидкой</a>
+              </div>
+              <div className='on-sale'>
+                <ProductOnSale/>
+              </div>
             </div>
           </Core>
         )
     }
-  onStatusChange(isLiked, productId) {
-    const likedProducts = this.state.likedProducts;
-
-    if (isLiked) {
-      likedProducts.push(productId);
-    } else {
-      const index = likedProducts.indexOf(productId);
-      likedProducts.splice(index, 1);
-    }
-
-    this.setState({
-      likedProducts
-    })
-  }
+  // onStatusChange(isLiked, productId) {
+  //   const likedProducts = this.state.likedProducts;
+  //
+  //   if (isLiked) {
+  //     likedProducts.push(productId);
+  //   } else {
+  //     const index = likedProducts.indexOf(productId);
+  //     likedProducts.splice(index, 1);
+  //   }
+  //
+  //   this.setState({
+  //     likedProducts
+  //   })
+  // }
 }
 
 export default Home;

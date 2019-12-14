@@ -1,0 +1,10 @@
+.core {
+  position: relative;
+  min-height: 100%;
+  .core-body {
+    margin: auto;
+    min-height: 100%;
+    max-width: 1500px;
+    position: relative;
+  }
+}

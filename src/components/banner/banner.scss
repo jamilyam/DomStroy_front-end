@@ -1,8 +1,9 @@
 .banner {
   background-image: url("../../assets/images/home-decorators.jpg");
   background-size: cover;
+  background-position: top;
   background-repeat: no-repeat;
-  width: 80%;
+  max-width: 80%;
   height: auto;
   margin: 20px;
 }

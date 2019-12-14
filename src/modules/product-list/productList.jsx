@@ -1,8 +1,7 @@
 import React from 'react';
 import './productList.scss';
-import ProductBox from "../../components/product-box/productBox";
+import ProductBox from "../../components/product-box/product-box";
 import Core from "../../components/core/core";
-
 
 class ProductList extends React.Component{
 
@@ -10,7 +9,8 @@ class ProductList extends React.Component{
     super(props);
     this.state = {
       products: [],
-      likedProducts: []
+      likedProducts: [],
+      cart:[]
     }
   }
 
@@ -23,21 +23,23 @@ class ProductList extends React.Component{
     });
   }
 
-
     render() {
         return(
           <Core>
-            <div className='parent-container'>
+            <div className='products-list'>
               <div className='products'>
                 {this.state.products.map((product, index) => {
                     return(
                       <ProductBox
                         key={`product-${index}`}
                         product={product}
-                        likedProducts={this.state.likedProducts}
-                        onStatusChange={(isLiked, productId) => {
-                          this.onStatusChange(isLiked, productId);
-                        }}
+                        // likedProducts={this.state.likedProducts}
+                        // onStatusChange={(isLiked, productId) => {
+                        //   this.onStatusChange(isLiked, productId);
+                        // }}
+                        // onAddToCart={(productId) => {
+                        //   this.onAddToCart(productId);
+                        // }}
                       />
                     )
                   }
@@ -47,20 +49,6 @@ class ProductList extends React.Component{
           </Core>
         )
     }
-  onStatusChange(isLiked, productId) {
-    const likedProducts = this.state.likedProducts;
-    if (isLiked) {
-      likedProducts.push(productId);
-    } else {
-      const index = likedProducts.indexOf(productId);
-      likedProducts.splice(index, 1);
-    }
-
-    this.setState({
-      likedProducts
-    })
-  }
-
 }
 
 export default ProductList;

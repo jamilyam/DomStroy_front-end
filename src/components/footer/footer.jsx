@@ -6,29 +6,33 @@ import ButtonIcon from "../button-icon/button-icon";
 class Footer extends React.Component{
   render() {
     return(
-      <div className='footer'>
+      <div className='footer-container'>
         {this.props.links.map(link => {
           return(
-            <a href={link.link}>{link.name}</a>
+            <div className='footer-links'>
+              <a href={link.link}><h3>{link.title}</h3>{link.name}</a>
+            </div>
           )
         })}
         <div className='social'>
-          <div>Контакты</div>
-          <ButtonIcon
-            type='facebook'
-            onClick={() => {
-            }}
-          />
-          <ButtonIcon
-            type='instagram'
-            onClick={() => {
-            }}
-          />
-          <ButtonIcon
-            type='youtube'
-            onClick={() => {
-            }}
-          />
+          <h3>Контакты</h3>
+          <div className='icons'>
+            <ButtonIcon
+              type='facebook'
+              onClick={() => {
+              }}
+            />
+            <ButtonIcon
+              type='instagram'
+              onClick={() => {
+              }}
+            />
+            <ButtonIcon
+              type='youtube'
+              onClick={() => {
+              }}
+            />
+          </div>
         </div>
       </div>
     )

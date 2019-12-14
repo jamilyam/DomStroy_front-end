@@ -2,8 +2,14 @@
   box-sizing: border-box;
 }
 .icon {
+  text-align: center;
+  p {
+    color: white;
+    margin-top: 5px;
+  }
   button {
     width: 50px;
+    cursor: pointer;
     height: 30px;
     border: none;
     outline: none;
@@ -13,12 +19,14 @@
       -webkit-mask-image: url("../../assets/icon/heart.svg");
       mask-repeat: no-repeat;
       -webkit-mask-repeat: no-repeat;
+      mask-size: 50px 30px;
     }
-    &.user-profile {
+    &.sign-in-form {
       mask-image: url("../../assets/icon/black-male-user-symbol.svg");
       -webkit-mask-image: url("../../assets/icon/black-male-user-symbol.svg");
       mask-repeat: no-repeat;
       -webkit-mask-repeat: no-repeat;
+      mask-size: 50px 30px;
     }
     &.shopping-cart {
       mask-image: url("../../assets/icon/shopping-cart-of-checkered-design.svg");
@@ -42,6 +50,12 @@
     &.youtube {
       mask-image: url("../../assets/icon/youtube.svg");
       -webkit-mask-image: url("../../assets/icon/youtube.svg");
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+    }
+    & burger {
+      mask-image: url("../../assets/icon/menu-symbol-of-three-parallel-lines.svg");
+      -webkit-mask-image: url("../../assets/icon/menu-symbol-of-three-parallel-lines.svg");
       mask-repeat: no-repeat;
       -webkit-mask-repeat: no-repeat;
     }

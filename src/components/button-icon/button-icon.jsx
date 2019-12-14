@@ -10,7 +10,9 @@ class ButtonIcon extends React.Component{
           className={this.props.type}
           onClick={this.props.onClick}
         >
+         {this.props.children}
         </button>
+        <p>{this.props.title}</p>
       </div>
     )
   }

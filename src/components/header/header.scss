@@ -1,21 +1,17 @@
 .header {
-  padding: 0 10px;
   display: flex;
   background-color: darkorange;
   align-items: center;
   justify-content: space-around;
-  padding: 20px 0;
-  > * {
-    flex: 1 1 auto;
-
-  }
+  padding: 20px 10px;
   a {
     color: white;
     text-decoration-line: none;
+    cursor: pointer;
   }
   input.search {
-    flex: 3 0 auto;
-    width: 500px;
+    flex: 1 1 auto;
+    width: 400px;
     height: 40px;
     border-radius: 15px;
   }
@@ -24,9 +20,41 @@
     height: 30px;
     border: none;
     outline: none;
+    cursor: pointer;
+    position: relative;
   }
   img.logo {
     width: auto;
     height: 50px;
+  }
+  .counter {
+    background-color: grey;
+    color: white;
+    position: absolute;
+    top: 3px;
+    border-radius: 100%;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header a:not(:first-child) {display: none;}
+  .header a {
+    float: left;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header.responsive {position: relative;}
+  .header.responsive button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .header input {
+    display: none;
   }
 }

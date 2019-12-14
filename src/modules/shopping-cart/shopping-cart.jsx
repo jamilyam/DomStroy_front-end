@@ -1,12 +1,67 @@
 import React from 'react';
-import './ShoppingCart.scss';
+import './shopping-cart.scss';
 import { withRouter } from "react-router-dom";
+import ProductTableRow from "../../components/product-table-row/product-table-row";
+import Core from "../../components/core/core";
+import Popup from "../../components/popup/popup";
+import Context from "../../context";
+import ProductTable from "../../components/product-table/product-table";
 
-export class ShoppingCart extends React.Component {
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checkOutPopupIsVisible: false
+    }
+  }
   render() {
-    return
+    return (
+          <Core>
+            {/*<Context.Consumer>*/}
+            {/*  {(context) => (*/}
+                <div className='shopping-cart'>
+                  <div className='product-row'>
+                    <ProductTableRow/>
+                  {/*<ProductTableRow product={null}/>*/}
+                    {/*{context.boughtProducts.map((product) => {*/}
+                    {/*  console.log(product)*/}
+                    {/*  return <ProductTableRow product={product}/>*/}
+                    {/*})}*/}
+                    {/*COUNT: {context.likedProducts.length}*/}
+                  </div>
+                  <div className='total'>
+                    <div className='row'>
+                      <span className='left'>Количество: </span>
+                      <span className='right'>10</span>
+                    </div>
+                    <div className='row'>
+                      <span className='left'>Итого:</span>
+                      <span className='right'>1000</span>
+                    </div>
+                    <div>
+                      <button
+                        onClick={()=> {
+                          this.setState({
+                            checkOutPopupIsVisible:true
+                          })
+                        }}>
+                        Перейти к оформлению
+                      </button>
+                    </div>
+                  </div>
+                  <Popup
+                    isOpen={this.state.checkOutPopupIsVisible}
+                  >
+                  </Popup>
+                </div>
+            {/*  )}*/}
+            {/*</Context.Consumer>*/}
+          </Core>
+    )
   }
 }
+
+export default withRouter(ShoppingCart);
 
 //   constructor(props) {
 //     super(props);
@@ -26,8 +81,6 @@ export class ShoppingCart extends React.Component {
 //     });
 //   }
 // }
-
-export default withRouter(ShoppingCart);
 
 
 // //create a stateless component to display the shopping cart items

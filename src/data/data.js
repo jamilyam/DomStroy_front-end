@@ -1,4 +1,4 @@
-const CATEGORIES = [
+export const CATEGORIES = [
   'Строительные товары',
   'Сантех товары',
   'Электро товары',
@@ -6,22 +6,40 @@ const CATEGORIES = [
   'Лакокрасочные товары'
 ];
 
-export default CATEGORIES;
+export const LINKS = [
+  {
+    name: 'Акции',
+    link: '/products-on-sale'
+  },
+  {
+    name: 'Tовары',
+    link: '/product-list'
+  },
+  {
+    name: 'Доставка',
+    link: '/delivery'
+  }
+];
 
-// const LINKS = [
-//   {
-//     name: 'Акции',
-//     link: '/product-on-sale'
-//   },
-//   {
-//     name: 'Обзоры',
-//     link: '/test'
-//   },
-//   {
-//     name: 'Доставка',
-//     link: '/delivery'
-//   }
-// ];
-//
-// export default LINKS;
+export const FOOTERLINKS = [
+  {
+    title: 'Компания',
+    name: 'О компании',
+    link: '/about-us'
+  },
+  {
+    title: 'Информация',
+    name: 'Способы оплаты',
+    link: '/payment-info'
+  },
+  {
+    title: 'Помощь',
+    name: 'Возврат',
+    link: '/company-policy-info'
+  }
+];
+
+
+
+
 

@@ -1,0 +1,33 @@
+.shopping-cart {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  .product-row {
+    flex: 1;
+    flex-basis: 60%;
+  }
+  .total {
+    flex: 1;
+    display: block;
+    border-radius: 7px;
+    padding: 20px;
+    .row {
+      display: inline-block;
+
+      .right {
+        float: right;
+      }
+    }
+  }
+  .total > div {
+    padding: 20px;
+  }
+  button {
+    background-color: darkorange;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}

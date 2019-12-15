@@ -43,7 +43,6 @@ class Categories extends React.Component{
                   <Category
                     name={category}
                     onClick={async () => {
-                      debugger;
                       const response = await fetch(`http://localhost:3000/products?category=${category.toLowerCase()}`);
                       const products = await response.json()
 

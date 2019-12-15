@@ -20,10 +20,53 @@ import Payment from "./modules/payment-info/payment";
 import Policy from "./modules/policy/policy";
 import ShoppingCart from "./modules/shopping-cart/shopping-cart";
 import Favorite from "./modules/favorite/favorite";
+import Context from "./context";
+import Footer from "./components/footer/footer";
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      likedProducts: [],
+      boughtProducts: []
+    }
+  }
+  render() {
+
   return (
+    <Context.Provider value={
+      {
+        likedProducts: this.state.likedProducts,
+        changeStatus: (liked, id) => {
+          const lProducts = this.state.likedProducts
+          if (liked) {
+            lProducts.push(id)
+          } else {
+            const index = lProducts.indexOf(id)
+            lProducts.splice(index, 1)
+          }
 
+          this.setState({
+            likedProducts: lProducts
+          })
+        },
+        boughtProducts: this.state.boughtProducts,
+        onAddToCart: (inCart, id) => {
+          debugger
+          const cart = this.state.boughtProducts;
+          if (inCart) {
+            cart.push(id);
+          } else {
+            const index = cart.indexOf(id);
+            cart.splice(index, 1);
+          }
+
+          this.setState({
+            boughtProducts: cart
+          })
+        }
+      }
+    }>
       <BrowserRouter>
         <Switch>
           <Route path='/' exact={true} component={Home}></Route>
@@ -41,9 +84,12 @@ function App() {
           <Route path='/company-policy-info' exact={true} component={Policy}></Route>
           <Route path='/categories/:categoryName' component={Categories}></Route>
           <Redirect from='/*' to='/'></Redirect>
+          <Footer/>
         </Switch>
       </BrowserRouter>
-  );
+    </Context.Provider>
+  )
+}
 }
 
 export default App;

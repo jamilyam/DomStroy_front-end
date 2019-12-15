@@ -23,9 +23,7 @@ class Header extends React.Component{
             />
             {this.props.links.map(link => {
               return(
-                <div className='links'>
-                  <a href={link.link}>{link.name}</a>
-                </div>
+                <a href={link.link}>{link.name}</a>
               )
             })}
             <InputSearch

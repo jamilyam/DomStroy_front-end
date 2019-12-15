@@ -49,7 +49,9 @@ class Home extends React.Component{
                 </div>
                 <Banner/>
               </div>
-              <div className='h'> <a href={`/product-list`}>Все товары</a></div>
+              <div className='block'>
+                <a href={`/product-list`}>Все товары</a>
+              </div>
               <div className='products'>
                 {this.state.products.map((product) => {
                   return (
@@ -65,7 +67,7 @@ class Home extends React.Component{
                   )
                 })}
               </div>
-              <div className='h'>
+              <div className='block'>
                 <a href={`/product-on-sale`}>Товары со скидкой</a>
               </div>
               <div className='on-sale'>

@@ -9,15 +9,16 @@ class Favorite extends Component {
       <Core>
         <Context.Consumer>
           {(context) => (
-            <div className='counter'>
-              {context.likedProducts.map((product) => {
-                console.log(product)
-                return <ProductBox
-                  key={`product-${product.id}`}
-                  product={product}
-                />
-              })}
+            <div className='favorite-products'>
               COUNT: {context.likedProducts.length}
+              {context.likedProducts.map((product) => {
+                return (
+                  <ProductBox
+                    key={`product-${product.id}`}
+                    product={product}
+                  />
+                )
+              })}
             </div>
           )}
         </Context.Consumer>

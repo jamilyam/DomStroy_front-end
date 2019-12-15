@@ -1,8 +1,10 @@
 .home {
   margin: auto;
   text-align: center;
-  .h {
+  min-height: 100%;
+  .block {
     margin-bottom: 20px;
+    padding: 20px 50px;
     a {
       text-decoration: none;
       color: darkorange;
@@ -11,7 +13,6 @@
     }
   }
   .products {
-    padding: 20px 50px;
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -31,5 +32,4 @@
     display: flex;
     flex-wrap: wrap;
   }
-
 }

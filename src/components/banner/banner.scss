@@ -1,9 +1,26 @@
 .banner {
+  background-size: 100%;
   background-image: url("../../assets/images/home-decorators.jpg");
-  background-size: cover;
-  background-position: top;
   background-repeat: no-repeat;
-  max-width: 80%;
+  background-position: center;
+  top: -3px;
+  width: 100%;
   height: auto;
   margin: 20px;
+  border: 1px solid grey;
+  position: relative;
+  .name {
+    position: absolute;
+    top: 30%;
+    right: 60%;
+    a {
+      background-color: darkorange;
+      color: white;
+      font-size: 16px;
+      padding: 10px 30px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration-line: none;
+    }
+  }
 }

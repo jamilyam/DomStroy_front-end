@@ -7,7 +7,8 @@ class ProductTableRow extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      ...this.props
+      ...this.props,
+      product: []
     }
   }
 
@@ -18,8 +19,7 @@ class ProductTableRow extends React.Component{
       <Context.Consumer>
         {(context) => (
           <div className='product-table-row'>
-            COUNT: {context.boughtProducts.length}
-            COUNT: {context.likedProducts.length}
+            Количество товаров: {context.boughtProducts.length}
             <table className='table'>
               <tr>
                 <th>Картинка</th>
@@ -29,12 +29,12 @@ class ProductTableRow extends React.Component{
                 <th>Удалить</th>
               </tr>
               <tr>
-                <td><img alt='boughtProduct' src={this.props.product}/></td>
+                <td><img alt='img' src={this.props.product}/></td>
                 <td>
                   <span className="name">{this.props.product}</span>
                 </td>
                 <td>
-                  <span>{this.props.price}</span>
+                  <span>{this.props.product}</span>
                 </td>
                 <td>
                   <span>1</span>

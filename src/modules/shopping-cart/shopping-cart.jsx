@@ -16,47 +16,43 @@ class ShoppingCart extends React.Component {
   }
   render() {
     return (
-          <Core>
-            {/*<Context.Consumer>*/}
-            {/*  {(context) => (*/}
-                <div className='shopping-cart'>
-                  <div className='product-row'>
-                    <ProductTableRow/>
-                  {/*<ProductTableRow product={null}/>*/}
-                    {/*{context.boughtProducts.map((product) => {*/}
-                    {/*  console.log(product)*/}
-                    {/*  return <ProductTableRow product={product}/>*/}
-                    {/*})}*/}
-                    {/*COUNT: {context.likedProducts.length}*/}
-                  </div>
-                  <div className='total'>
-                    <div className='row'>
-                      <span className='left'>Количество: </span>
-                      <span className='right'>10</span>
-                    </div>
-                    <div className='row'>
-                      <span className='left'>Итого:</span>
-                      <span className='right'>1000</span>
-                    </div>
-                    <div>
-                      <button
-                        onClick={()=> {
-                          this.setState({
-                            checkOutPopupIsVisible:true
-                          })
-                        }}>
-                        Перейти к оформлению
-                      </button>
-                    </div>
-                  </div>
-                  <Popup
-                    isOpen={this.state.checkOutPopupIsVisible}
-                  >
-                  </Popup>
-                </div>
-            {/*  )}*/}
-            {/*</Context.Consumer>*/}
-          </Core>
+      <Core>
+        {/*<Context.Consumer>*/}
+        {/*  {(context) => (*/}
+        <div className='shopping-cart'>
+          <div className='product-row'>
+            <ProductTableRow/>
+            {/*<ProductTableRow product={null}/>*/}
+            {/*{context.boughtProducts.map((product) => {*/}
+            {/*  console.log(product)*/}
+            {/*  return <ProductTableRow product={product}/>*/}
+            {/*})}*/}
+            {/*COUNT: {context.likedProducts.length}*/}
+          </div>
+          <div className='total'>
+            <div className='row'>
+              <span className='left'>Итого:</span>
+              <span className='right'>1000</span>
+            </div>
+            <div>
+              <button
+                onClick={()=> {
+                  this.setState({
+                    checkOutPopupIsVisible:true
+                  })
+                }}>
+                Перейти к оформлению
+              </button>
+            </div>
+          </div>
+          <Popup
+            isOpen={this.state.checkOutPopupIsVisible}
+          >
+          </Popup>
+        </div>
+        {/*  )}*/}
+        {/*</Context.Consumer>*/}
+      </Core>
     )
   }
 }

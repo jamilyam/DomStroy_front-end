@@ -2,7 +2,6 @@ import React from 'react';
 import './single-product.scss';
 import { withRouter } from "react-router-dom";
 import Core from "../../components/core/core";
-import ButtonIcon from "../../components/button-icon/button-icon";
 import Context from "../../context";
 
 
@@ -24,6 +23,7 @@ class SingleProduct extends React.Component {
       product: product
     });
   }
+
   render() {
     if (!this.state.product) {
       return null;
@@ -61,8 +61,7 @@ class SingleProduct extends React.Component {
                 <div className='price'>
                   Цена: <p>{price} сом</p>
                   <button
-                    onClick={() =>
-                      context.onAddToCart(true, id)}>
+                    onClick={() => context.onAddToCart(true, this.state.product)}>
                     Купить
                   </button>
                 </div>

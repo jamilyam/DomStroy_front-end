@@ -5,22 +5,14 @@ import Context from "../../context";
 
 
 class ProductBox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      ...this.props,
-    }
-  }
-
   render() {
-
-    const {id, image, name, price, category, isOnSale} = this.state.product;
+    const {id, image, name, price, category, isOnSale} = this.props.product;
 
     return(
       <Context.Consumer>
         {(context) => (
           <div className='product-box'>
-            {context.likedProducts.indexOf(id) !== -1 && <img
+            {context.likedProducts.indexOf(this.props.product) !== -1 && <img
               className='like'
               src='/like.svg'
               width='30px'
@@ -33,19 +25,19 @@ class ProductBox extends React.Component {
             <div className='n-image'><img src={image}/></div>
             <div className='name'><a href={`/product-list/${id}`}>{name}</a></div>
             <div className='price'><span>Цена:{price}сом</span>
-              {context.likedProducts.indexOf(id) !== -1  ?
+              {context.likedProducts.indexOf(this.props.product) !== -1  ?
                 <ButtonIcon
                   type = 'favorite'
-                  onClick={() => context.changeStatus(false, id)}>
+                  onClick={() => context.changeStatus(false, this.props.product)}>
                 </ButtonIcon> :
                 <ButtonIcon
                   type = 'favorite'
-                  onClick={() => context.changeStatus(true, id)}>
+                  onClick={() => context.changeStatus(true, this.props.product)}>
                 </ButtonIcon>
               }
               <ButtonIcon
                 type = 'shopping-cart'
-                onClick={() => context.onAddToCart(true, id)}>
+                onClick={() => context.onAddToCart(true, this.props.product)}>
               </ButtonIcon>
             </div>
             <div className='category'>Категория: {category}</div>

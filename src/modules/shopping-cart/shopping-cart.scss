@@ -1,7 +1,7 @@
 .shopping-cart {
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
+  min-height: 100%;
   .product-row {
     flex: 1;
     flex-basis: 60%;

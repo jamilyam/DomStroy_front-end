@@ -77,20 +77,20 @@ class Home extends React.Component{
           </Core>
         )
     }
-  // onStatusChange(isLiked, productId) {
-  //   const likedProducts = this.state.likedProducts;
-  //
-  //   if (isLiked) {
-  //     likedProducts.push(productId);
-  //   } else {
-  //     const index = likedProducts.indexOf(productId);
-  //     likedProducts.splice(index, 1);
-  //   }
-  //
-  //   this.setState({
-  //     likedProducts
-  //   })
-  // }
+  getProducts = async () => {
+    const response = await this.getProducts(`http://localhost:3000/products?_page=1&_limit=4`);
+    const products = await response.json();
+      this.setState( {
+        products: products
+      });
+  };
+  onSearch = async (searchValue) => {
+    const response = await fetch(`http://localhost:3000/products?name_like=${searchValue}`);
+    const products = await response.json();
+    this.setState({
+      products: products
+    });
+  }
 }
 
 export default Home;

@@ -10,11 +10,15 @@ class Popup extends React.Component{
         <Modal
           isOpen={this.props.isOpen}
           style={{
-            width: '200px',
-            height: '300px',
+            maxWidth: '100px',
+            maxHeight: '200px',
             backgroundColor: 'white',
           }}
         >
+          <div className='close'
+               onClick={() => {
+               }}
+          >x</div>
           <Input title='Имя'/>
           <Input title='email'/>
           <button onClick={()=>{}}
@@ -26,3 +30,28 @@ class Popup extends React.Component{
 }
 
 export default Popup;
+//
+// constructor(){//do stuff here}
+//   componentDidMount(){
+//     let visited = localStorage["alreadyVisited"];
+//     if(visited) {
+//       this.setState({ viewPopup: false })
+//       //do not view Popup
+//     } else {
+//       //this is the first time
+//       localStorage["alreadyVisited"] = true;
+//       this.setState({ viewPopup: true});
+//     }
+//     render() {
+//       return(<Modal
+//         aria-labelledby='modal-label'
+//         autoFocus={false}
+//         style={modalStyle}
+//         backdropStyle={backdropStyle}
+//         show={this.state.viewPopup}
+//         onHide={this.close}>
+//         <div style={dialogStyle()} >
+//           I'm the Popup Text
+//         </div>
+//       </Modal>);
+//     }

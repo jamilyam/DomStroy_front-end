@@ -8,18 +8,15 @@ class ProductTableRow extends React.Component{
     super(props);
     this.state = {
       ...this.props,
-      product: []
+      boughtProducts: []
     }
   }
 
   render() {
-    // const {name, image, price} = this.state.product;
-
     return(
       <Context.Consumer>
         {(context) => (
           <div className='product-table-row'>
-            Количество товаров: {context.boughtProducts.length}
             <table className='table'>
               <tr>
                 <th>Картинка</th>
@@ -29,20 +26,20 @@ class ProductTableRow extends React.Component{
                 <th>Удалить</th>
               </tr>
               <tr>
-                <td><img alt='img' src={this.props.product}/></td>
+                <td><img className='small-image' alt='img' src={this.props.product.image}/></td>
                 <td>
-                  <span className="name">{this.props.product}</span>
+                  <span className="name">{this.props.product.name}</span>
                 </td>
                 <td>
-                  <span>{this.props.product}</span>
+                  <span>{this.props.product.price}</span>
                 </td>
                 <td>
                   <span>1</span>
                 </td>
                 <td>
                   <button
-                    className='delete'>
-                    {/*// onClick={() => context.onAddToCart(false, id)}*/}
+                    className='delete'
+                    onClick={() => context.onAddToCart(false, product)}>
                     Удалить
                   </button>
                 </td>

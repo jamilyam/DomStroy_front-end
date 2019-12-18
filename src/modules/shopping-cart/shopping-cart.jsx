@@ -1,36 +1,38 @@
 import React from 'react';
 import './shopping-cart.scss';
 import { withRouter } from "react-router-dom";
-import ProductTableRow from "../../components/product-table-row/product-table-row";
 import Core from "../../components/core/core";
 import Popup from "../../components/popup/popup";
 import Context from "../../context";
-import ProductTable from "../../components/product-table/product-table";
+import ProductBox from "../../components/product-box/product-box";
+import ProductTableRow from "../../components/product-table-row/product-table-row";
 
 class ShoppingCart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      checkOutPopupIsVisible: false
+      checkOutPopupIsVisible: false,
+      boughtProducts: []
     }
   }
   render() {
     return (
+      <Context.Consumer>
+        {(context) => (
       <Core>
-        {/*<Context.Consumer>*/}
-        {/*  {(context) => (*/}
         <div className='shopping-cart'>
           <div className='product-row'>
-            <ProductTableRow/>
-            {/*<ProductTableRow product={null}/>*/}
-            {/*{context.boughtProducts.map((product) => {*/}
-            {/*  console.log(product)*/}
-            {/*  return <ProductTableRow product={product}/>*/}
-            {/*})}*/}
-            {/*COUNT: {context.likedProducts.length}*/}
+            {context.boughtProducts.map((product, index) => {
+              return (
+                <ProductTableRow
+                  key={`product-${index}`}
+                  product={product}/>
+              )
+            })}
           </div>
           <div className='total'>
             <div className='row'>
+              <p>Количество товаров: {context.boughtProducts.length}</p>
               <span className='left'>Итого:</span>
               <span className='right'>1000</span>
             </div>
@@ -47,12 +49,19 @@ class ShoppingCart extends React.Component {
           </div>
           <Popup
             isOpen={this.state.checkOutPopupIsVisible}
-          >
+          ><button
+            onClick={()=> {
+              this.setState({
+                checkOutPopupIsVisible:false
+              })
+            }}>
+            close
+          </button>
           </Popup>
         </div>
-        {/*  )}*/}
-        {/*</Context.Consumer>*/}
       </Core>
+        )}
+      </Context.Consumer>
     )
   }
 }

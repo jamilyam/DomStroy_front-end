@@ -37,12 +37,12 @@ class App extends React.Component {
     <Context.Provider value={
       {
         likedProducts: this.state.likedProducts,
-        changeStatus: (liked, id) => {
+        changeStatus: (liked, product) => {
           const lProducts = this.state.likedProducts
           if (liked) {
-            lProducts.push(id)
+            lProducts.push(product)
           } else {
-            const index = lProducts.indexOf(id)
+            const index = lProducts.indexOf(product)
             lProducts.splice(index, 1)
           }
 
@@ -51,13 +51,13 @@ class App extends React.Component {
           })
         },
         boughtProducts: this.state.boughtProducts,
-        onAddToCart: (inCart, id) => {
+        onAddToCart: (inCart, product) => {
           debugger
           const cart = this.state.boughtProducts;
           if (inCart) {
-            cart.push(id);
+            cart.push(product);
           } else {
-            const index = cart.indexOf(id);
+            const index = cart.indexOf(product);
             cart.splice(index, 1);
           }
 

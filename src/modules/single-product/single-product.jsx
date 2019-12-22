@@ -66,8 +66,7 @@ class SingleProduct extends React.Component {
                   </button>
                 </div>
               </div>
-              <div className='description'><p>Описание</p>{description}
-              </div>
+              <div className='description'><p>Описание</p>{description}</div>
             </div>
           </Core>
         )}

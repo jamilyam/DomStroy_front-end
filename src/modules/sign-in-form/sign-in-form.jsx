@@ -11,6 +11,7 @@ class SignInForm extends React.Component {
           <div className='inner-form'>
             <h3>Зарегистрироваться</h3>
             <Input title='Имя'/>
+            <Input title='Пароль'/>
             <Input title='email'/>
             <Input title='номер телефона'/>
             <Input title='адресс доставки'/>

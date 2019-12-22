@@ -35,6 +35,9 @@
       -webkit-mask-repeat: no-repeat;
       mask-size: 50px 30px;
     }
+    &.yellow {
+      background-color: yellow;
+    }
     &.facebook {
       mask-image: url("../../assets/icon/facebook.svg");
       -webkit-mask-image: url("../../assets/icon/facebook.svg");

@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
 import {
     Redirect,
     Route,
@@ -17,7 +16,6 @@ import Delivery from "./modules/delivery/delivery";
 import SearchResults from "./modules/search-results/searchresults";
 import CompanyInfo from "./modules/company-info/company-info";
 import Payment from "./modules/payment-info/payment";
-import Policy from "./modules/policy/policy";
 import ShoppingCart from "./modules/shopping-cart/shopping-cart";
 import Favorite from "./modules/favorite/favorite";
 import Context from "./context";
@@ -52,7 +50,6 @@ class App extends React.Component {
         },
         boughtProducts: this.state.boughtProducts,
         onAddToCart: (inCart, product) => {
-          debugger
           const cart = this.state.boughtProducts;
           if (inCart) {
             cart.push(product);
@@ -62,7 +59,8 @@ class App extends React.Component {
           }
 
           this.setState({
-            boughtProducts: cart
+            boughtProducts: cart,
+            bgColor: 'yellow'
           })
         }
       }
@@ -81,7 +79,6 @@ class App extends React.Component {
           <Route path='/delivery' exact={true} component={Delivery}></Route>
           <Route path='/about-us' exact={true} component={CompanyInfo}></Route>
           <Route path='/payment-info' exact={true} component={Payment}></Route>
-          <Route path='/company-policy-info' exact={true} component={Policy}></Route>
           <Route path='/categories/:categoryName' component={Categories}></Route>
           <Redirect from='/*' to='/'></Redirect>
           <Footer/>

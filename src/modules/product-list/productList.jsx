@@ -23,32 +23,25 @@ class ProductList extends React.Component{
     });
   }
 
-    render() {
-        return(
-          <Core>
-            <div className='products-list'>
-              <div className='products'>
-                {this.state.products.map((product, index) => {
-                    return(
-                      <ProductBox
-                        key={`product-${index}`}
-                        product={product}
-                        // likedProducts={this.state.likedProducts}
-                        // onStatusChange={(isLiked, productId) => {
-                        //   this.onStatusChange(isLiked, productId);
-                        // }}
-                        // onAddToCart={(productId) => {
-                        //   this.onAddToCart(productId);
-                        // }}
-                      />
-                    )
-                  }
-                )}
-              </div>
-            </div>
-          </Core>
-        )
-    }
+  render() {
+    return(
+      <Core>
+        <div className='products-list'>
+          <div className='products'>
+            {this.state.products.map((product, index) => {
+                return(
+                  <ProductBox
+                    key={`product-${index}`}
+                    product={product}
+                  />
+                )
+              }
+            )}
+          </div>
+        </div>
+      </Core>
+    )
+  }
 }
 
 export default ProductList;

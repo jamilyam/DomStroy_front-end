@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Core from "../../components/core/core";
 import Context from "../../context";
 import ProductBox from "../../components/product-box/product-box";
-import ProductTableRow from "../../components/product-table-row/product-table-row";
 
 class Favorite extends Component {
   constructor(props) {

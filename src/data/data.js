@@ -34,10 +34,12 @@ export const FOOTERLINKS = [
   },
   {
     title: 'Помощь',
-    name: 'Возврат',
-    link: '/company-policy-info'
+    name: 'Служба поддержки',
+    link: '/about-us'
   }
 ];
+
+
 
 
 

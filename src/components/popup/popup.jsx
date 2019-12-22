@@ -2,27 +2,39 @@ import React from 'react';
 import Modal from "react-modal";
 import Input from "../input/input";
 
+const customStyles = {
+  content : {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '50%',
+    transform: 'translate(50%, 50%)',
+    maxWidth: '400px',
+    padding : '20px'
+  }
+};
+
 class Popup extends React.Component{
 
   render() {
     return(
-      <div className='pop-up'>
-        <Modal
+      <div className='modal'>
+        <Modal className='inner-modal'
           isOpen={this.props.isOpen}
-          style={{
-            maxWidth: '100px',
-            maxHeight: '200px',
-            backgroundColor: 'white',
-          }}
+               style={customStyles}
         >
           <div className='close'
-               onClick={() => {
-               }}
+               onClick={() => this.state.checkOutPopupIsVisible(false)}
           >x</div>
-          <Input title='Имя'/>
-          <Input title='email'/>
-          <button onClick={()=>{}}
-          >Войти</button>
+          <div className='form'>
+            <Input title='Имя'/>
+            <Input title='Пароль'/>
+            <div>
+            <button onClick={()=>{}}
+            >Войти</button>
+            </div>
+          </div>
         </Modal>
       </div>
     )

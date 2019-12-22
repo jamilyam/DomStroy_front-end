@@ -5,18 +5,13 @@ import ButtonIcon from "../button-icon/button-icon";
 import {withRouter} from 'react-router-dom';
 import Context from "../../context";
 
-
 class Header extends React.Component{
   render() {
     return(
       <Context.Consumer>
         {(context) => (
           <div className='header'>
-            {/*<ButtonIcon className = 'burger'*/}
-            {/*  type='burger'*/}
-            {/*  onClick={() => {*/}
-            {/*}}/>*/}
-            <img className="logo" alt='logo' src="/logo192.png"
+            <img className="logo" alt='logo' src='/logo.png'
                  onClick={() => {
                    this.props.history.push('/')
                  }}
@@ -30,9 +25,6 @@ class Header extends React.Component{
               onEnter={(value) => {
                 this.props.history.push(`/search-results/${value}`);
               }}
-              // onEnter={(value) => {
-              //   this.props.onSearch(value);
-              // }}
             />
             <ButtonIcon
               type='favorite'

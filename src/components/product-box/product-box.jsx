@@ -37,6 +37,7 @@ class ProductBox extends React.Component {
               }
               <ButtonIcon
                 type = 'shopping-cart'
+                style={{backgroundColor:context.bgColor}}
                 onClick={() => context.onAddToCart(true, this.props.product)}>
               </ButtonIcon>
             </div>

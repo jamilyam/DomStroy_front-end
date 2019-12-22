@@ -23,18 +23,18 @@ class SearchResults extends React.Component{
 
   render() {
     return(
-          <Core>
-            <div className='search-results'>
-              {this.state.products.map((product, index) => {
-                return (
-                  <ProductBox
-                    key={`product-${index}`}
-                    product={product}
-                  />
-                )
-              })}
-            </div>
-          </Core>
+      <Core>
+        <div className='search-results'>
+          {this.state.products.map((product, index) => {
+            return (
+              <ProductBox
+                key={`product-${index}`}
+                product={product}
+              />
+            )
+          })}
+        </div>
+      </Core>
     )
   }
 }

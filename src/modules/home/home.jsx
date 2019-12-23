@@ -1,11 +1,11 @@
 import React from 'react';
 import './home.scss';
-import ProductBox from "../../components/product-box/product-box";
+import ProductBox from "../../components/productBox/productBox";
 import Category from "../../components/category/category";
 import { CATEGORIES } from "../../data/data";
 import Core from "../../components/core/core";
 import Banner from "../../components/banner/banner";
-import ProductOnSale from "../../components/product-on-sale/product-on-sale";
+import ProductOnSale from "../../components/productOnSale/productOnSale";
 
 class Home extends React.Component{
   constructor(props) {
@@ -61,7 +61,7 @@ class Home extends React.Component{
             })}
           </div>
           <div className='block'>
-            <a href={`/product-on-sale`}>Товары со скидкой</a>
+            <a href={`/products-on-sale`}>Товары со скидкой</a>
           </div>
           <div className='on-sale'>
             <ProductOnSale/>

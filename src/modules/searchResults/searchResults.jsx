@@ -1,8 +1,8 @@
 import React from 'react';
-import './searchresults.scss';
+import './searchResults.scss';
 import Core from "../../components/core/core";
 import { withRouter } from 'react-router-dom';
-import ProductBox from "../../components/product-box/product-box";
+import ProductBox from "../../components/productBox/productBox";
 
 
 class SearchResults extends React.Component{

@@ -1,6 +1,6 @@
 import React from 'react';
-import './product-box.scss';
-import ButtonIcon from "../button-icon/button-icon";
+import './productBox.scss';
+import ButtonIcon from "../buttonIcon/buttonIcon";
 import Context from "../../context";
 
 
@@ -17,12 +17,13 @@ class ProductBox extends React.Component {
               src='/like.svg'
               width='30px'
               height='30px'
+              alt='like'
             />}
 
             <div className='status'>
               {isOnSale && <div className='on-sale'>-50%</div>}
             </div>
-            <div className='n-image'><img src={image}/></div>
+            <div className='n-image'><img src={image} alt='products'/></div>
             <div className='name'><a href={`/product-list/${id}`}>{name}</a></div>
             <div className='price'><span>Цена:{price}сом</span>
               {context.likedProducts.indexOf(this.props.product) !== -1  ?
@@ -37,6 +38,7 @@ class ProductBox extends React.Component {
               }
               <ButtonIcon
                 type = 'shopping-cart'
+                disable = 'true'
                 style={{backgroundColor:context.bgColor}}
                 onClick={() => context.onAddToCart(true, this.props.product)}>
               </ButtonIcon>

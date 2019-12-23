@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer.scss';
 import { withRouter } from 'react-router-dom';
-import ButtonIcon from "../button-icon/button-icon";
+import ButtonIcon from "../buttonIcon/buttonIcon";
 
 class Footer extends React.Component{
   render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './productList.scss';
-import ProductBox from "../../components/product-box/product-box";
+import ProductBox from "../../components/productBox/productBox";
 import Core from "../../components/core/core";
 
 class ProductList extends React.Component{

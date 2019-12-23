@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.scss';
-import InputSearch from "../search-input/search-input";
-import ButtonIcon from "../button-icon/button-icon";
+import InputSearch from "../searchInput/searchInput";
+import ButtonIcon from "../buttonIcon/buttonIcon";
 import {withRouter} from 'react-router-dom';
 import Context from "../../context";
 

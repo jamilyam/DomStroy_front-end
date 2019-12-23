@@ -1,5 +1,5 @@
 import React from 'react';
-import './single-product.scss';
+import './singleProduct.scss';
 import { withRouter } from "react-router-dom";
 import Core from "../../components/core/core";
 import Context from "../../context";
@@ -28,7 +28,7 @@ class SingleProduct extends React.Component {
     if (!this.state.product) {
       return null;
     }
-    const {id, image, name, brand, type, color, description, price, category, weight} = this.state.product;
+    const {image, name, brand, type, color, description, price, category, weight} = this.state.product;
 
     return(
       <Context.Consumer>
@@ -38,7 +38,7 @@ class SingleProduct extends React.Component {
               <div className='name'>{name}</div>
               <div className='product-info'>
                 <div className='product-image'>
-                  <img className='image' src={image}/>
+                  <img className='image' src={image} alt='product'/>
                 </div>
                 <div className='info'>
                   <h3>Характеристика товара</h3>

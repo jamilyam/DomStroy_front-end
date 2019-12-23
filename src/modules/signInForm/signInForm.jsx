@@ -1,5 +1,5 @@
 import React from 'react';
-import './sign-in-form.scss';
+import './signInForm.scss';
 import Input from "../../components/input/input";
 import Core from "../../components/core/core";
 

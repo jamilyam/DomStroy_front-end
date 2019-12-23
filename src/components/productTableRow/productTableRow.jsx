@@ -1,7 +1,7 @@
 import React from 'react';
-import './product-table-row.scss';
+import './productTableRow.scss';
 import Context from "../../context";
-import product from "../../modules/single-product/single-product";
+import product from "../../modules/singleProduct/singleProduct";
 
 class ProductTableRow extends React.Component{
   constructor(props) {

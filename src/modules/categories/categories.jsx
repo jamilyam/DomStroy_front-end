@@ -1,6 +1,6 @@
 import React from 'react';
 import './categories.scss';
-import ProductBox from "../../components/product-box/product-box";
+import ProductBox from "../../components/productBox/productBox";
 import {withRouter} from 'react-router-dom';
 import Category from "../../components/category/category";
 import {CATEGORIES} from "../../data/data";

@@ -1,5 +1,5 @@
 import React from 'react';
-import './search-input.scss';
+import './searchInput.scss';
 
 class InputSearch extends React.Component{
   render() {

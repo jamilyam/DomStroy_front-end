@@ -1,11 +1,10 @@
 import React from 'react';
-import './shopping-cart.scss';
+import './shoppingCart.scss';
 import { withRouter } from "react-router-dom";
 import Core from "../../components/core/core";
 import Popup from "../../components/popup/popup";
 import Context from "../../context";
-import ProductBox from "../../components/product-box/product-box";
-import ProductTableRow from "../../components/product-table-row/product-table-row";
+import ProductTableRow from "../../components/productTableRow/productTableRow";
 
 class ShoppingCart extends React.Component {
   constructor(props) {
@@ -15,6 +14,7 @@ class ShoppingCart extends React.Component {
       boughtProducts: []
     }
   }
+
   render() {
     return (
       <Context.Consumer>

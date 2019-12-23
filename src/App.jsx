@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import {
     Redirect,
     Route,
@@ -7,19 +6,18 @@ import {
     BrowserRouter
 } from 'react-router-dom';
 import Home from "./modules/home/home";
-import SignInForm from "./modules/sign-in-form/sign-in-form";
+import SignInForm from "./modules/signInForm/signInForm";
 import Categories from "./modules/categories/categories";
-import ProductList from "./modules/product-list/productList";
-import ProductsOnSaleList from "./modules/product-on-sale-list/products-on-sale-list";
-import SingleProduct from "./modules/single-product/single-product";
+import ProductList from "./modules/productList/productList";
+import ProductsOnSaleList from "./modules/productOnSaleList/productsOnSaleList";
+import SingleProduct from "./modules/singleProduct/singleProduct";
 import Delivery from "./modules/delivery/delivery";
-import SearchResults from "./modules/search-results/searchresults";
-import CompanyInfo from "./modules/company-info/company-info";
-import Payment from "./modules/payment-info/payment";
-import ShoppingCart from "./modules/shopping-cart/shopping-cart";
+import SearchResults from "./modules/searchResults/searchResults";
+import CompanyInfo from "./modules/companyInfo/companyInfo";
+import Payment from "./modules/payment/payment";
+import ShoppingCart from "./modules/shoppingCart/shoppingCart";
 import Favorite from "./modules/favorite/favorite";
 import Context from "./context";
-import Footer from "./components/footer/footer";
 
 class App extends React.Component {
   constructor(props) {
@@ -81,7 +79,6 @@ class App extends React.Component {
           <Route path='/payment-info' exact={true} component={Payment}></Route>
           <Route path='/categories/:categoryName' component={Categories}></Route>
           <Redirect from='/*' to='/'></Redirect>
-          <Footer/>
         </Switch>
       </BrowserRouter>
     </Context.Provider>

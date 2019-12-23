@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Core from "../../components/core/core";
 import Context from "../../context";
-import ProductBox from "../../components/product-box/product-box";
+import ProductBox from "../../components/productBox/productBox";
 
 class Favorite extends Component {
   constructor(props) {
@@ -16,7 +16,8 @@ class Favorite extends Component {
         <Context.Consumer>
           {(context) => (
             <div className='favorite-products'>
-              COUNT: {context.likedProducts.length}
+              Количество товаров: {context.likedProducts.length}
+              <div className='products-display'>
               {context.likedProducts.map((product, index) => {
                 return (
                   <ProductBox
@@ -25,6 +26,7 @@ class Favorite extends Component {
                   />
                 )
               })}
+              </div>
             </div>
           )}
         </Context.Consumer>

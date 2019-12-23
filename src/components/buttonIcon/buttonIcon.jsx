@@ -1,5 +1,5 @@
 import React from 'react';
-import './button-icon.scss';
+import './buttonIcon.scss';
 import { withRouter } from 'react-router-dom';
 
 class ButtonIcon extends React.Component{
@@ -7,6 +7,8 @@ class ButtonIcon extends React.Component{
     return(
       <div className='icon'>
         <button
+          color={this.props.style}
+          disabled={this.props.disabled}
           className={this.props.type}
           onClick={this.props.onClick}
         >

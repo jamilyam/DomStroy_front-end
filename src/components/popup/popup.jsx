@@ -4,19 +4,15 @@ import Input from "../input/input";
 
 const customStyles = {
   content : {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '50%',
-    transform: 'translate(50%, 50%)',
-    maxWidth: '400px',
-    padding : '20px'
+    transform: 'translate(0%, 50%)',
+    maxWidth: '500px',
+    padding : '20px',
+    bgColor: 'white',
+    margin: 'auto'
   }
 };
 
 class Popup extends React.Component{
-
   render() {
     return(
       <div className='modal'>
@@ -25,13 +21,13 @@ class Popup extends React.Component{
                style={customStyles}
         >
           <div className='close'
-               onClick={() => this.state.checkOutPopupIsVisible(false)}
-          >x</div>
+               onClick={() => {}}
+          >X</div>
           <div className='form'>
             <Input title='Имя'/>
             <Input title='Пароль'/>
             <div>
-            <button onClick={()=>{}}
+            <button className='login' onClick={() => {}}
             >Войти</button>
             </div>
           </div>
@@ -42,28 +38,3 @@ class Popup extends React.Component{
 }
 
 export default Popup;
-//
-// constructor(){//do stuff here}
-//   componentDidMount(){
-//     let visited = localStorage["alreadyVisited"];
-//     if(visited) {
-//       this.setState({ viewPopup: false })
-//       //do not view Popup
-//     } else {
-//       //this is the first time
-//       localStorage["alreadyVisited"] = true;
-//       this.setState({ viewPopup: true});
-//     }
-//     render() {
-//       return(<Modal
-//         aria-labelledby='modal-label'
-//         autoFocus={false}
-//         style={modalStyle}
-//         backdropStyle={backdropStyle}
-//         show={this.state.viewPopup}
-//         onHide={this.close}>
-//         <div style={dialogStyle()} >
-//           I'm the Popup Text
-//         </div>
-//       </Modal>);
-//     }

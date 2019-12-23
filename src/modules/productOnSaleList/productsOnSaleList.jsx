@@ -1,7 +1,7 @@
 import React from 'react';
-import './products-on-sale-list.scss';
+import './productsOnSaleList.scss';
 import Core from "../../components/core/core";
-import ProductOnSale from "../../components/product-on-sale/product-on-sale";
+import ProductOnSale from "../../components/productOnSale/productOnSale";
 
 class ProductsOnSaleList extends React.Component{
   render() {

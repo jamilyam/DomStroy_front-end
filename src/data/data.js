@@ -30,7 +30,7 @@ export const FOOTERLINKS = [
   {
     title: 'Информация',
     name: 'Способы оплаты',
-    link: '/payment-info'
+    link: '/payment'
   },
   {
     title: 'Помощь',

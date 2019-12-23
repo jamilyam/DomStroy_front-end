@@ -1,6 +1,6 @@
 import React from 'react';
-import './product-on-sale.scss';
-import ProductBox from "../product-box/product-box";
+import './productOnSale.scss';
+import ProductBox from "../productBox/productBox";
 
 class ProductOnSale extends React.Component {
   constructor(props) {

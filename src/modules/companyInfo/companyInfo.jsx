@@ -1,5 +1,5 @@
 import React from 'react';
-import './company-info.scss';
+import './companyInfo.scss';
 import Core from "../../components/core/core";
 
 class CompanyInfo extends React.Component {

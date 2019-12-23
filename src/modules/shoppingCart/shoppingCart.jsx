@@ -37,20 +37,12 @@ class ShoppingCart extends React.Component {
               <span className='right'></span>
             </div>
             <div>
-              <button
-                onClick={()=> {
-                  this.setState({
-                    checkOutPopupIsVisible:true
-                  })
-                }}>
-                Перейти к оформлению
-              </button>
+              <Popup
+                isOpen={this.state.checkOutPopupIsVisible}
+              >
+              </Popup>
             </div>
           </div>
-          <Popup
-            isOpen={this.state.checkOutPopupIsVisible}
-          >
-          </Popup>
         </div>
       </Core>
         )}
